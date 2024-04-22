@@ -7,7 +7,7 @@ on:
     # branches: [ main , master ]
 
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, piper_tetun ]
 
   workflow_dispatch:
 
@@ -52,7 +52,7 @@ jobs:
 
   upload_release:
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, 'refs/tags/') }}
+    #if: ${{ startsWith(github.ref, 'refs/tags/') }}
     needs: ["build"]
     steps:
     - uses: actions/checkout@v3
